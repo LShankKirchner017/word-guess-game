@@ -13,11 +13,23 @@ var words = ["jellyfish", "pancakes", "callback", "bacon", "porcupine"]
 var userGuesses = [] // list of letters guessed by user
 var answer
 
+function getRandomWord() {
+  var randomIdx = Math.floor( Math.random() * words.length )
+  answer = words[randomIdx]
+}
+
+function renderWord() {
+  var blanks = ""
+  for (var i = 0; i < answer.length; i++) {
+    blanks += "_"
+  }
+  wordBlanksEl.innerText = blanks.split('').join(' ')
+}
+
 function startRound() {
-  console.log('Starting round...')
-  // start timer
-  // pick a random word
-  // set word-blanks to have _'s
+  // TODO: start timer
+  getRandomWord()
+  renderWord()
 }
 
 function onKeydown(event) {
