@@ -1,14 +1,14 @@
 // vars
 
 // select dom elements
-  // start button
-  // reset button
-  // count down timer
-  // word-blanks
-  // wins
-  // losses
+var startButton = document.querySelector('.start-button')
+var resetButton = document.querySelector('.reset-button')
+var timerEl = document.querySelector('.timer')
+var wordBlanksEl = document.querySelector('.word-blanks')
+var winsEl = document.querySelector('.win')
+var lossesEl = document.querySelector('.lose')
 
-  // list of words
+// list of words
   // userGuesses = [] list of letters guessed by user
   // answer = "function"
 
