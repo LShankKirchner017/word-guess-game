@@ -16,12 +16,19 @@ var answer
 function getRandomWord() {
   var randomIdx = Math.floor( Math.random() * words.length )
   answer = words[randomIdx]
+  console.log(answer)
 }
 
 function renderWord() {
   var blanks = ""
   for (var i = 0; i < answer.length; i++) {
-    blanks += "_"
+    var letter = answer[i]
+    // check if userGuesses contains current letter
+    if (userGuesses.includes(letter)) {
+      blanks += letter
+    } else {
+      blanks += "_"
+    }    
   }
   wordBlanksEl.innerText = blanks.split('').join(' ')
 }
@@ -34,11 +41,15 @@ function startRound() {
 
 function onKeydown(event) {
   // check if letter pressed is in the answer string
-    // if yes
-      // reveal letter in word-blanks
+  // and if not already guessed
+  if ( answer.includes(event.key) && !userGuesses.includes(event.key)  ) {
+    userGuesses.push(event.key)
+  }
+  renderWord()
 }
 
 function tick() {
+  // TODO:
   // check if userGuesses has all letters that are in answer string
     // if has guess all letters
       // end round
@@ -54,7 +65,8 @@ function tick() {
 }
 
 // Event Listeners
-// start - startRound()
 startButton.addEventListener('click', startRound)
-// reset
-// keydown - onKeydown
+
+document.body.addEventListener('keypress', onKeydown)
+
+// TODO: reset
