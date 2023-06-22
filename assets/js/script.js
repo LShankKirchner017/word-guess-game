@@ -7,7 +7,7 @@ var timerEl = document.querySelector('.timer')
 var wordBlanksEl = document.querySelector('.word-blanks')
 var winsEl = document.querySelector('.win')
 var lossesEl = document.querySelector('.lose')
-
+console.log(words)
 // list of words
 var words = ["jellyfish", "pancakes", "callback", "bacon", "porcupine"]
 var userGuesses = [] // list of letters guessed by user
