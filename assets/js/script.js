@@ -4,16 +4,14 @@
   var startButton = document.querySelector(".start-button")
   var resetButton = document.querySelector(".reset-button");
   var timerEl = document.querySelector(".timer");
-  // word blanks
   var wordBlanksEl = document.querySelector(".word-blanks");
-  // wins
   var winsEl = document.querySelector(".win");
-  // losses
   var lossesEl = document.querySelector(".lose");
 
 // list of words
-// userGuesses = [] list of letters guessed by user
-// answer = "function"
+var words = ["jellyfish", "pancakes", "callback", "bacon", "porcupine"]
+var userGuesses = [] // list of letters guessed by user
+var answer // undefined until start button is hit
 
 function startRound(){
   // start timer 
@@ -43,6 +41,6 @@ function tick(){
         // decrement timer count
 }
 // Event Listeners
-  // start
+startButton.addEventListener('click', startRound)
   // reset
   // keydown - onKeydown
