@@ -13,10 +13,26 @@ var words = ["jellyfish", "pancakes", "callback", "bacon", "porcupine"]
 var userGuesses = [] // list of letters guessed by user
 var answer // undefined until start button is hit
 
+function getRandomWord(){
+ var randomIdx = Math.floor(Math.random() * words.length);
+ answer = words[randomIdx];
+}
+
+function renderWord(){
+  // set word blanks inner text to have underscores for each letter of random word
+  var blanks = "";
+  for (var i = 0; i < answer.length; i++) {
+    blanks += "_";
+  }
+  wordBlanksEl.innerText = blanks.split("").join(" ");
+}
+
+
 function startRound(){
-  // start timer 
-  // pick a random word
-  // set word blanks to have underscores
+  console.log("Starting round...")
+  // TODO: start timer 
+  getRandomWord()
+ renderWord()
 }
 
 function onKeydown(event){
