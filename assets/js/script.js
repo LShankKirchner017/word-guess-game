@@ -1,19 +1,22 @@
 // vars
 
 // select dom elements
-  // start button 
-  // reset button
-  // count down timer
+  var startButton = document.querySelector(".start-button")
+  var resetButton = document.querySelector(".reset-button");
+  var timerEl = document.querySelector(".timer");
   // word blanks
+  var wordBlanksEl = document.querySelector(".word-blanks");
   // wins
+  var winsEl = document.querySelector(".win");
   // losses
+  var lossesEl = document.querySelector(".lose");
 
 // list of words
 // userGuesses = [] list of letters guessed by user
 // answer = "function"
 
 function startRound(){
-  // start timer
+  // start timer 
   // pick a random word
   // set word blanks to have underscores
 }
